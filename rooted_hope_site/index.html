@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description"
+    content="Rooted Hope by Praveena Sana — counselling psychology, psycho-oncology, caregiver support and emotional wellbeing.">
+  <title>Rooted Hope by Praveena Sana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --sky: #78aaf0;
+      --sky2: #6da1ec;
+      --deep: #1d73ec;
+      --ink: #17232d;
+      --teal: #0d7772;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: 'DM Sans', Arial, sans-serif;
+      color: var(--ink)
+    }
+
+    body {
+      overflow-x: hidden;
+      background: var(--sky)
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 28px 22px;
+      background: linear-gradient(180deg, var(--sky) 0%, var(--sky2) 100%);
+    }
+
+    /* Decorative circles — intentionally kept to echo the reference homepage */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none
+    }
+
+    .c1 {
+      width: 400px;
+      height: 400px;
+      background: #1e73ef;
+      right: -155px;
+      top: -130px
+    }
+
+    .c2 {
+      width: 110px;
+      height: 110px;
+      background: #fff;
+      left: 62px;
+      top: 265px
+    }
+
+    .c3 {
+      width: 52px;
+      height: 52px;
+      background: #1e73ef;
+      left: 32px;
+      top: 438px
+    }
+
+    .c4 {
+      width: 100px;
+      height: 100px;
+      background: #1e73ef;
+      left: 112px;
+      top: 475px
+    }
+
+    .c5 {
+      width: 45px;
+      height: 45px;
+      background: #fff;
+      left: 30px;
+      bottom: 215px
+    }
+
+    .c6 {
+      width: 85px;
+      height: 85px;
+      background: #1e73ef;
+      left: 54px;
+      bottom: 76px
+    }
+
+    .c7 {
+      width: 64px;
+      height: 64px;
+      background: #fff;
+      right: 60px;
+      top: 385px
+    }
+
+    .c8 {
+      width: 48px;
+      height: 48px;
+      background: #1e73ef;
+      right: 125px;
+      top: 450px
+    }
+
+    .c9 {
+      width: 116px;
+      height: 116px;
+      background: #f5f7fb;
+      right: 195px;
+      bottom: 190px
+    }
+
+    .c10 {
+      width: 45px;
+      height: 45px;
+      background: #1e73ef;
+      right: 30px;
+      bottom: 198px
+    }
+
+    .bottom-arc {
+      position: absolute;
+      width: 760px;
+      height: 300px;
+      border-radius: 50% 50% 0 0;
+      background: #1e73ef;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -205px
+    }
+
+    .bottom-block {
+      position: absolute;
+      width: 320px;
+      height: 70px;
+      background: #1e73ef;
+      right: -70px;
+      bottom: 42px
+    }
+
+    .brand {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      margin-bottom: 66px;
+      opacity: 0;
+      animation: brandIn .55s ease 2.15s forwards
+    }
+
+    .brand-logo {
+      width: 130px;
+      height: 130px;
+      margin: auto;
+      position: relative;
+      border-radius: 50%;
+      background: #1e73ef;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(15, 49, 82, .24)
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block
+    }
+
+    .brand .tagline {
+      font-size: 11px;
+      margin-top: 8px;
+      color: #18314c;
+      letter-spacing: .02em;
+      font-weight: 600
+    }
+
+    .intro-logo {
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+      animation: introLayer 2.25s ease forwards
+    }
+
+    .intro-logo .disc {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #1e73ef;
+      box-shadow: 0 24px 65px rgba(9, 46, 92, .32);
+      animation: introLogo 2.05s cubic-bezier(.22, .82, .24, 1) .05s both
+    }
+
+    .intro-logo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 50%
+    }
+
+    .cards {
+      animation: contentIn .72s ease 2.2s both
+    }
+
+    .connect,
+    .credit {
+      animation: contentIn .72s ease 2.32s both
+    }
+
+    .circle,
+    .bottom-arc,
+    .bottom-block {
+      animation: decorIn .8s ease 2.05s both
+    }
+
+    @keyframes introLogo {
+      0% {
+        transform: scale(4.7);
+        opacity: 0;
+        filter: blur(3px)
+      }
+
+      14% {
+        opacity: 1;
+        filter: blur(0)
+      }
+
+      58% {
+        transform: scale(4.7)
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    @keyframes introLayer {
+
+      0%,
+      88% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 0;
+        visibility: hidden
+      }
+    }
+
+    @keyframes brandIn {
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes contentIn {
+      0% {
+        opacity: 0;
+        transform: translateY(18px)
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes decorIn {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .intro-logo {
+        display: none
+      }
+
+      .brand,
+      .cards,
+      .connect,
+      .credit,
+      .circle,
+      .bottom-arc,
+      .bottom-block {
+        animation: none !important;
+        opacity: 1
+      }
+    }
+
+    .cards {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(3, 238px);
+      gap: 68px;
+      justify-content: center;
+      align-items: start
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid rgba(42, 66, 92, .18);
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 3px;
+      box-shadow: 0 5px 12px rgba(18, 47, 80, .07)
+    }
+
+    .card-media {
+      height: 157px;
+      background: #f5f7f9;
+      overflow: hidden
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .card.about .card-media img {
+      object-position: center 20%
+    }
+
+    .card-body {
+      padding: 18px 24px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1
+    }
+
+    .card h2 {
+      font: 700 18px/1.2 'Playfair Display', Georgia, serif;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0 0 16px;
+      color: #202020;
+      min-height: 72px
+    }
+
+    .open {
+      display: inline-block;
+      align-self: flex-start;
+      background: #0878ee;
+      color: #fff;
+      padding: 9px 15px;
+      font-weight: 500;
+      font-size: 15px;
+      border-radius: 2px;
+      margin-top: auto;
+      transition: .18s ease
+    }
+
+    .open:hover {
+      background: #0066d5;
+      transform: translateY(-1px)
+    }
+
+    .connect {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      margin-top: 80px
+    }
+
+    .connect h3 {
+      font-size: 25px;
+      font-weight: 400;
+      margin: 0 0 14px;
+      color: #151515
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px
+    }
+
+    .social {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: transparent
+    }
+
+    .social svg {
+      width: 32px;
+      height: 32px;
+      display: block
+    }
+
+    .instagram svg {
+      fill: #ff1744
+    }
+
+    .youtube svg {
+      fill: #ff0000
+    }
+
+    .instagram-note {
+      font-size: 11px;
+      color: #15334e;
+      margin-top: 8px
+    }
+
+    .credit {
+      position: relative;
+      z-index: 3;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #17283b
+    }
+
+    @media(max-width:980px) {
+      .cards {
+        grid-template-columns: repeat(3, minmax(190px, 230px));
+        gap: 24px;
+        width: 100%
+      }
+
+      .c1 {
+        right: -220px
+      }
+
+      .c9 {
+        right: 40px
+      }
+    }
+
+    @media(max-width:760px) {
+      .hero {
+        padding: 30px 16px 42px;
+        min-height: auto
+      }
+
+      .brand {
+        margin-bottom: 32px
+      }
+
+      .brand-logo {
+        width: 112px;
+        height: 112px
+      }
+
+      .intro-logo .disc {
+        width: 150px;
+        height: 150px
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        width: min(360px, 94vw);
+        gap: 20px
+      }
+
+      .card {
+        min-height: 0
+      }
+
+      .card-media {
+        height: 185px
+      }
+
+      .card p {
+        min-height: 0
+      }
+
+      .connect {
+        margin-top: 42px
+      }
+
+      .connect h3 {
+        font-size: 22px
+      }
+
+      .circle,
+      .bottom-arc,
+      .bottom-block {
+        opacity: .45
+      }
+
+      .c1 {
+        width: 250px;
+        height: 250px;
+        right: -130px;
+        top: -70px
+      }
+
+      .c2 {
+        left: -25px;
+        top: 190px
+      }
+
+      .c4 {
+        left: -30px;
+        top: 520px
+      }
+
+      .c7 {
+        right: -20px;
+        top: 640px
+      }
+
+      .c9 {
+        right: -35px;
+        bottom: 180px
+      }
+    }
+
+    .fullscreen-btn {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 9999;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .92);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .fullscreen-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="hero">
+    <div class="intro-logo" aria-hidden="true">
+      <div class="disc"><img src="assets/rooted-hope-logo.png" alt=""></div>
+    </div>
+    <span class="circle c1"></span><span class="circle c2"></span><span class="circle c3"></span><span
+      class="circle c4"></span><span class="circle c5"></span><span class="circle c6"></span><span
+      class="circle c7"></span><span class="circle c8"></span><span class="circle c9"></span><span
+      class="circle c10"></span>
+    <span class="bottom-arc"></span><span class="bottom-block"></span>
+
+    <header class="brand">
+      <div class="brand-logo"><img src="assets/rooted-hope-logo.png" alt="Rooted Hope by Praveena Sana logo"></div>
+      <div class="tagline">Supporting minds. Honouring lives. Growing hope.</div>
+      <aside>
+        <button id="fullscreenBtn" class="fullscreen-btn" aria-label="Toggle fullscreen" title="Full screen">
+          ⛶
+        </button>
+      </aside>
+    </header>
+
+    <section class="cards" aria-label="Rooted Hope navigation">
+      <article class="card about">
+        <div class="card-media">
+          <img src="assets/praveena-sana-portrait.png" alt="Praveena Sana">
+        </div>
+        <div class="card-body">
+          <h2>About</h2>
+          <p>Click to know more about Rooted Hope and Praveena Sana.</p>
+          <a class="open" href="explore.html#about">Open</a>
+        </div>
+      </article>
+
+      <article class="card sections">
+        <div class="card-media">
+          <img
+            src="https://img.magnific.com/premium-vector/counseling-depression-white-background-vector-illustration-flat_969863-5532.jpg?q=80&semt=ais_hybrid&w=740"
+            alt="Counselling and mental health support illustration">
+        </div>
+        <div class="card-body">
+          <h2>Explore</h2>
+          <p>Services, cancer care, hospital exposure, qualifications, resources and articles.</p>
+          <a class="open" href="explore.html">Open</a>
+        </div>
+      </article>
+
+      <article class="card contact-card">
+        <div class="card-media">
+          <img
+            src="https://www.connect2mydoctor.com/new/microsites/static/media/contactpage-banner.564cbd85ce6891e4af9c.webp"
+            alt="Contact Rooted Hope">
+        </div>
+        <div class="card-body">
+          <h2>Contact us</h2>
+          <p>For counselling enquiries, collaborations, programmes or support.</p>
+          <a class="open" href="explore.html#contact">Open</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="connect" aria-label="Social media">
+      <h3>Connect with Us..</h3>
+      <div class="socials">
+        <div class="social instagram" title="Instagram: sana praveena" aria-label="Instagram: sana praveena">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.75 1.65a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z" />
+          </svg>
+        </div>
+        <a class="social youtube" href="https://www.youtube.com/@praveenasanatalks" target="_blank" rel="noopener"
+          aria-label="YouTube @praveenasanatalks">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.9 12l-6.3 3.6Z" />
+          </svg>
+        </a>
+      </div>
+      <div class="instagram-note">Instagram: sana praveena</div>
+    </section>
+    <div class="credit">Rooted Hope • Praveena Sana</div>
+  </main>
+  <script>
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    fullscreenBtn.addEventListener('click', async () => {
+      try {
+        if (!document.fullscreenElement) {
+          await document.documentElement.requestFullscreen();
+          fullscreenBtn.textContent = '✕';
+        } else {
+          await document.exitFullscreen();
+          fullscreenBtn.textContent = '⛶';
+        }
+      } catch (error) {
+        console.log('Fullscreen is not available:', error);
+      }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+      fullscreenBtn.textContent = document.fullscreenElement ? '✕' : '⛶';
+    });
+  </script>
+</body>
+
+</html>
